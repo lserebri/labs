@@ -1,0 +1,60 @@
+//Леонид Серебряков
+//ip-82
+//variant - 29
+//laba-5
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using static System.Math;
+
+namespace laba5_leonid_
+{
+    public class Class1
+    {
+        public static double Factorial(double a)
+        {
+            double f;
+
+            f = 1;
+            if (a != 0)
+            {
+                while (a != 0)
+                {
+                    f = f * a;
+                    a--;
+                }
+                if (f < 0)
+                {
+                    f = f * (-1);
+                    return (f);
+                }
+                else
+                    return (f);
+            }
+            else
+                return 1;
+        }
+        public static void Main(string[] args)
+        {
+            int x;
+            double k;
+            double a;
+            double s;
+
+            a = 0.0;
+            k = 0.0;
+            x = 5;
+            s = 0;
+            while (a != x)
+            {
+                s += ((Pow((-1), k)) * ((Pow((a / 3), (4 * k)))
+                      / Factorial(k * 2)));
+                Console.WriteLine(s);
+                k++;
+                a++;
+            }
+        }
+    }
+}
