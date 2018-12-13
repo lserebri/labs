@@ -1,0 +1,66 @@
+//Leonid Serebryakov
+//IP - 82
+//Variant - 29
+//laba-7
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using static System.Math;
+
+namespace laba7
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int N;
+            int n;
+            int i;
+            int k;
+            int t;
+            int S;
+
+            Console.WriteLine("Введите N");
+            N = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите k");
+            k = Convert.ToInt32(Console.ReadLine());
+
+            T:
+            Console.WriteLine("Введите t > k");
+            t = Convert.ToInt32(Console.ReadLine());
+            if (t <= k)
+                goto T;
+            int[] array = new int[N];
+            Random rand = new Random();
+
+            n = 0;
+            S = 0;
+            for (i = 0; i < array.Length; i++)
+            {
+                array[i] = rand.Next(-50, 50);
+                if (array[i] >= k && array[i] <= t)
+                {
+                    n++;
+                    S += array[i];
+                }
+            }
+            if (n == 0)
+                Console.WriteLine("Нет элементов в данном диапазоне");
+            else
+                Console.WriteLine("Количество элементов из диапазона = " + n);
+            Console.WriteLine("Сумма элементов из диапазона = " + S);
+            for (i = 0; i < array.Length; i++)
+            {
+                if (array[i] >= k && array[i] <= t)
+                {
+                    array[i] += S;
+                    Console.WriteLine(array[i]);
+                }
+                
+            }
+        }
+    }
+}
