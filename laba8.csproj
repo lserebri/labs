@@ -1,0 +1,70 @@
+//Leonid Serebryakov
+//IP-82
+//variant - 29
+//laba - 8
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using static System.Math;
+
+namespace laba8_leonid_
+{
+    public class Class1
+    {
+        private static void SaddlePoints(int[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (!IsMinInLine(i, j, array) || !IsMaxInColumn(i, j, array)) continue;
+                    Console.WriteLine("    Элемент {0} является седловым.", array[i, j]);
+                    Console.WriteLine("Строка: {0}\tстолбец: {1}", i + 1, j + 1);
+                }
+            }
+        }
+        public static bool IsMinInLine(int i, int j, int[,] array)
+        {
+            for (int k = 0; k < array.GetLength(0); k++)
+            {
+                if (array[i, k] < array[i, j])
+                    return false;
+            }
+            return true;
+        }
+        public static bool IsMaxInColumn(int i, int j, int[,] array)
+        {
+            for (int k = 0; k < array.GetLength(0); k++)
+            {
+                if (array[k, j] > array[i, j])
+                    return false;
+            }    
+            return true;
+        }
+        public static void Main(string[] args)
+        {
+            int n;
+            int i;
+            int j;
+            Start:
+
+            Console.WriteLine("Введите N");
+            n = Convert.ToInt32(Console.ReadLine());
+            int[,] array = new int[n, n];
+            Random rand = new Random();
+            for (i = 0; i < n; i++)
+            {
+                for(j = 0; j < n; j++)
+                {
+                    array[i, j] = rand.Next(-50, 50);
+                    Console.Write(" " + array[i, j]);
+                }
+                Console.WriteLine();
+            }
+            SaddlePoints(array);
+            goto Start;
+        }
+    }
+}
