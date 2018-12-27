@@ -13,6 +13,26 @@ namespace laba7
 {
     class MainClass
     {
+        public static void Output(int[] array, int t, int k, int S)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] >= k && array[i] <= t)
+                {
+                    array[i] += S;
+                    Console.WriteLine(array[i]);
+                }
+                
+            }
+        }
+        public static void Check(int n, int S)
+        {
+            if (n == 0)
+                Console.WriteLine("Нет элементов в данном диапазоне");
+            else
+                Console.WriteLine("Количество элементов из диапазона = " + n);
+            Console.WriteLine("Сумма элементов из диапазона = " + S);
+        }
         public static void Main(string[] args)
         {
             Console.WriteLine("Введите N");
@@ -40,20 +60,8 @@ namespace laba7
                     S += array[i];
                 }
             }
-            if (n == 0)
-                Console.WriteLine("Нет элементов в данном диапазоне");
-            else
-                Console.WriteLine("Количество элементов из диапазона = " + n);
-            Console.WriteLine("Сумма элементов из диапазона = " + S);
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] >= k && array[i] <= t)
-                {
-                    array[i] += S;
-                    Console.WriteLine(array[i]);
-                }
-                
-            }
+            Check(n, S);
+            Output(array, t, k, S);
         }
     }
 }
