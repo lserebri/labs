@@ -9,17 +9,15 @@ using System.Linq;
 using System.Text;
 using static System.Math;
 
-namespace laba5_leonid_
+namespace laba5
 {
     public class Class1
     {
         public static double Factorial(double a)
         {
-            double f;
-
-            f = 1;
             if (a != 0)
             {
+                double f = 1;
                 while (a != 0)
                 {
                     f = f * a;
@@ -38,15 +36,11 @@ namespace laba5_leonid_
         }
         public static void Main(string[] args)
         {
-            int x;
-            double k;
-            double a;
-            double s;
+            int x = 5;
+            double k = 0.0;
+            double a = 0.0;
+            double s = 0;
 
-            a = 0.0;
-            k = 0.0;
-            x = 5;
-            s = 0;
             while (a != x)
             {
                 s += ((Pow((-1), k)) * ((Pow((a / 3), (4 * k)))
