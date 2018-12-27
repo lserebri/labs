@@ -45,18 +45,13 @@ namespace laba8_leonid_
         }
         public static void Main(string[] args)
         {
-            int n;
-            int i;
-            int j;
-            Start:
-
             Console.WriteLine("Введите N");
-            n = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
             int[,] array = new int[n, n];
             Random rand = new Random();
-            for (i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
-                for(j = 0; j < n; j++)
+                for(int j = 0; j < n; j++)
                 {
                     array[i, j] = rand.Next(-50, 50);
                     Console.Write(" " + array[i, j]);
@@ -64,7 +59,6 @@ namespace laba8_leonid_
                 Console.WriteLine();
             }
             SaddlePoints(array);
-            goto Start;
         }
     }
 }
