@@ -15,30 +15,23 @@ namespace laba7
     {
         public static void Main(string[] args)
         {
-            int N;
-            int n;
-            int i;
-            int k;
-            int t;
-            int S;
-
             Console.WriteLine("Введите N");
+            int N;
             N = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Введите k");
+            int k;
             k = Convert.ToInt32(Console.ReadLine());
 
-            T:
             Console.WriteLine("Введите t > k");
+            int t;
             t = Convert.ToInt32(Console.ReadLine());
-            if (t <= k)
-                goto T;
             int[] array = new int[N];
             Random rand = new Random();
 
-            n = 0;
-            S = 0;
-            for (i = 0; i < array.Length; i++)
+            int n = 0;
+            int S = 0;
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = rand.Next(-50, 50);
                 if (array[i] >= k && array[i] <= t)
@@ -52,7 +45,7 @@ namespace laba7
             else
                 Console.WriteLine("Количество элементов из диапазона = " + n);
             Console.WriteLine("Сумма элементов из диапазона = " + S);
-            for (i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] >= k && array[i] <= t)
                 {
