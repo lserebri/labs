@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using static System.Math;
-namespace laba6
+namespace laba12
 {
     class MainClass
     {
@@ -22,16 +22,6 @@ namespace laba6
             }
             return z;
         }
-        public static double Function_2(double b, double n)
-        {
-            double z = b;
-
-            for (int i = 0; i < n; i++)
-            {
-                z = (b / Pow(z, 4.0) + 4 * z) / 5;
-            }
-            return z;
-        }
         public static void Main(string[] args)
         {
             Console.WriteLine("Введите a > 0");
@@ -42,8 +32,8 @@ namespace laba6
             int n = Convert.ToInt32(Console.ReadLine());
             double Y;
             Y = (Pow(Function_1(a, n), (double)1 / 25) * 
-                    Pow(Function_2(b, n), (double)1 / 25)) + 
-                        Pow(Function_2(a, n), (double)1 / 5);
+                    Pow(Function_1(b, n), (double)1 / 25)) + 
+                        Pow(Function_1(a, n), (double)1 / 5);
             Console.WriteLine("Y = " + Y);
         }
     }
