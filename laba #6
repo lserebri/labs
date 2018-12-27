@@ -8,17 +8,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using static System.Math;
-namespace laba12
+namespace laba6
 {
     class MainClass
     {
         public static double Function_1(double a, double n)
         {
-            int i;
-            double z;
-            z = a;
+           double z = a;
            
-           for(i = 0; i < n; i++)
+           for(int i = 0; i < n; i++)
             {
                 z = (a / Pow(z, 4.0) + (4 * z)) / 5;
             }
@@ -26,13 +24,9 @@ namespace laba12
         }
         public static double Function_2(double b, double n)
         {
-            int i;
-            double z;
+            double z = b;
 
-            
-            z = b;
-
-            for (i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 z = (b / Pow(z, 4.0) + 4 * z) / 5;
             }
@@ -40,26 +34,13 @@ namespace laba12
         }
         public static void Main(string[] args)
         {
-            int a;
-            int b;
-            double n;
-            double Y;
-
-            A:
             Console.WriteLine("Введите a > 0");
-            a = Convert.ToInt32(Console.ReadLine());
-            if (a < 0)
-                goto A;
-            B:
+            int a = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите b > 0");
-            b = Convert.ToInt32(Console.ReadLine());
-            N:
+            int b = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите n (натуральное число)");
-            n = Convert.ToInt32(Console.ReadLine());
-            if (n <= 0)
-                goto N;
-            if (b < 0)
-                goto B;
+            int n = Convert.ToInt32(Console.ReadLine());
+            double Y;
             Y = (Pow(Function_1(a, n), (double)1 / 25) * 
                     Pow(Function_2(b, n), (double)1 / 25)) + 
                         Pow(Function_2(a, n), (double)1 / 5);
