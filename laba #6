@@ -19,6 +19,7 @@ namespace laba12
            for(int i = 0; i < n; i++)
             {
                 z = (a / Pow(z, 4.0) + (4 * z)) / 5;
+                
             }
             return z;
         }
@@ -31,9 +32,7 @@ namespace laba12
             Console.WriteLine("Введите n (натуральное число)");
             int n = Convert.ToInt32(Console.ReadLine());
             double Y;
-            Y = (Pow(Function_1(a, n), (double)1 / 25) * 
-                    Pow(Function_1(b, n), (double)1 / 25)) + 
-                        Pow(Function_1(a, n), (double)1 / 5);
+            Y = Function_1(Function_1(a * b, n), n) + Function_1(a , n);
             Console.WriteLine("Y = " + Y);
         }
     }
